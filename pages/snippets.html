@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Zack's Site</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/site_main.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../apps/highlight/styles/darcula.css">
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('time').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+    <script src="../apps/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body onload="startTime()">
+<div class="header">
+    <a href="../index.php"><img src="../images/logo/z_tech_outline.gif" alt="Site Logo"></a>
+    <h2>Zack's Site</h2>
+</div>
+<div class="top_nav">
+    <a href="../index.php">Home</a>
+    <a href="../pages/snippets.html">Snippets</a>
+    <a class="right" id="time"></a>
+    <a class="right" id="date"></a>
+</div>
+<div class="row">
+    <div class="column side"></div>
+    <div class="column middle">
+        <h3>Powershell</h3>
+        <p>Watches txt files and updates (Like Tail)</p>
+        <pre><code>
+            get-content -path "c:\some_path" -wait
+        </code></pre>
+        <h3>Python</h3>
+        <p>Windows 10 taskbar notification</p>
+        <pre><code>
+            import win10toast
+            toaster = win10toast.ToastNotifier()
+            toaster.show_toast('Python', 'Success! This is working!', duration=10)
+        </code></pre>
+        <h3>Filebot</h3>
+        <p>Move The, A and an to the back of renamed movies</p>
+        <pre><code>
+            {n.replaceFirst(/^(?i)(The|A|An)\s(.+)/, /$2, $1/)}
+        </code></pre>
+        <p>Full movie line</p>
+        <pre><code>
+            _renamed/{n.replaceFirst(/^(?i)(The|A|An)\s(.+)/, /$2, $1/)}/{n.replaceFirst(/^(?i)(The|A|An)\s(.+)/, /$2, $1/)}{' CD'+pi}{subt}
+        </code></pre>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="column side"></div>
+</div>
+<div class="bottom_nav">
+    <a href="../index.php">Home</a>
+    <a href="../pages/snippets.html">Snippets</a>
+    </div>
+<div class="footer">
+    <p>&copy;Zack's Workshop 2019</p>
+</div>
+<script>
+    var d = new Date();
+    document.getElementById("date").innerHTML = d.toDateString();
+</script>
+</body>
+</html>

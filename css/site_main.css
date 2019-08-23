@@ -1,0 +1,130 @@
+* 
+{
+  box-sizing: border-box;
+}
+
+/*@font-face {*/
+/*    font-family: panicbuttonbb_reg;*/
+/*    src: url(panicbuttonbb_reg.ttf);*/
+/*}*/
+
+body 
+{
+    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: panicbuttonbb_reg;*/
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Style the header */
+.header 
+{
+  background-color: #009933;
+  padding: 5px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.header img {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    height: 100px;
+    width: 200px;
+}
+
+.header p {
+    float: right;
+    background-color: #111111;
+    text-align: right;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column 
+{
+  float: left;
+  padding: 10px;
+    overflow: auto;
+}
+
+/* Left and right column */
+.column.side 
+{
+    width: 10%;
+}
+
+/* Middle column */
+.column.middle 
+{
+  width: 80%;
+    color: black;
+}
+
+/* Clear floats after the columns */
+.row:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.footer 
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  background-color: #009933;
+  color: white;
+  text-align: center;
+}
+
+.align_left {
+    float: left;
+    padding-left: 25px;
+}
+
+.align_right {
+    float: right;
+    padding-right: 25px;
+}
+
+@media screen and (max-width: 1000px) {
+    .column.middle {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1000px)
+{
+    .column.side, .header img, .bottom_nav, .footer
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .top_nav a {
+        float: none;
+        width: 100%;
+    }
+
+@media screen and (max-width: 600px) {
+      .column.middle
+      {
+      width: 100%;
+      }
+    }
+
+@media only screen and (max-width: 600px)
+    {
+    .column.side, .header img, .bottom_nav, .footer
+        {
+        display: none;
+        }
+    }
+
+}
